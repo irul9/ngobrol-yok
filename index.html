@@ -3,256 +3,415 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Us: Together 💙</title>
+    <title>Us Together 💙</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700;800&display=swap');
+
         :root {
-            --bg-gradient: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
-            --glass: rgba(255, 255, 255, 0.8);
+            --bg-main: #f0f9ff;
+            --glass: rgba(255, 255, 255, 0.85);
             --accent-blue: #3b82f6;
-            --text-main: #1e3a8a;
+            --text-dark: #1e293b;
             
             /* Category Colors */
             --c1: #60a5fa; --c2: #fb7185; --c3: #34d399; 
             --c4: #818cf8; --c5: #fbbf24; --c6: #a78bfa;
-            --c7: #2dd4bf; --c8: #f472b6; --c9: #fb923c;
-            --c-rand: #f87171;
+            --c7: #f472b6; --c8: #fb923c; --c9: #2dd4bf;
+            --c-rand: #ef4444;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
         body {
             font-family: 'Quicksand', sans-serif;
-            background: var(--bg-gradient);
+            background: var(--bg-main);
+            background-image: radial-gradient(at 0% 0%, #dbeafe 0, transparent 50%), radial-gradient(at 50% 0%, #e0f2fe 0, transparent 50%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: var(--text-main);
-            overflow-x: hidden;
+            color: var(--text-dark);
         }
 
         .container {
             width: 90%;
-            max-width: 400px;
+            max-width: 420px;
             background: var(--glass);
-            backdrop-filter: blur(10px);
-            padding: 2.5rem 1.5rem;
-            border-radius: 40px;
-            border: 1px solid rgba(255,255,255,0.4);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+            backdrop-filter: blur(15px);
+            padding: 2rem 1.5rem;
+            border-radius: 45px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
             text-align: center;
-            position: relative;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s ease;
         }
 
-        h1 { font-size: 1.8rem; margin-bottom: 0.5rem; font-weight: 800; letter-spacing: -0.5px; }
-        .subtitle { font-size: 0.9rem; opacity: 0.7; margin-bottom: 2rem; font-weight: 500; }
+        h1 { font-size: 1.8rem; font-weight: 800; margin-bottom: 5px; color: #0f172a; }
+        .subtitle { font-size: 0.85rem; opacity: 0.6; margin-bottom: 2rem; font-weight: 600; }
 
         /* Menu Grid */
         .menu-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 15px;
-            margin-bottom: 20px;
         }
 
-        .btn-cat {
-            aspect-ratio: 1/1;
-            border: none;
-            border-radius: 25px;
-            font-size: 1.8rem;
+        .cat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
             cursor: pointer;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .cat-item:active { transform: scale(0.9); }
+
+        .icon-box {
+            width: 100%;
+            aspect-ratio: 1/1;
+            border-radius: 24px;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1.8rem;
             box-shadow: 0 8px 15px rgba(0,0,0,0.05);
-            position: relative;
+            border: 1px solid rgba(255,255,255,0.3);
         }
 
-        .btn-cat:hover { transform: scale(1.1) rotate(5deg); }
-        .btn-cat:active { transform: scale(0.9); }
+        .cat-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
 
         .btn-random {
             grid-column: span 3;
-            aspect-ratio: auto;
-            padding: 15px;
-            border-radius: 20px;
             background: var(--c-rand);
             color: white;
-            font-size: 1rem;
-            font-weight: 700;
+            padding: 16px;
+            border-radius: 20px;
+            font-weight: 800;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(239, 68, 68, 0.2);
             margin-top: 10px;
         }
 
         /* Game Screen */
         #game-screen { display: none; }
 
-        .paper-zone {
-            width: 120px;
-            height: 120px;
+        .vibe-tag {
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--accent-blue);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .roll-circle {
+            width: 100px;
+            height: 100px;
             background: white;
             border-radius: 50%;
-            margin: 0 auto 30px;
+            margin: 0 auto 25px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-            position: relative;
+            font-size: 2.5rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
         }
 
-        .shaking { animation: playfulShake 0.4s infinite ease-in-out; }
-
-        @keyframes playfulShake {
-            0% { transform: scale(1) rotate(0); }
-            25% { transform: scale(1.1) rotate(10deg); }
-            50% { transform: scale(1.05) rotate(-10deg); }
-            75% { transform: scale(1.1) rotate(5deg); }
-            100% { transform: scale(1) rotate(0); }
+        .shaking { animation: fastShake 0.4s infinite alternate; }
+        @keyframes fastShake {
+            from { transform: rotate(-10deg) scale(1.1); }
+            to { transform: rotate(10deg) scale(1.1); }
         }
 
         .question-card {
             background: white;
             padding: 30px 20px;
-            border-radius: 30px;
-            min-height: 160px;
+            border-radius: 35px;
+            min-height: 180px;
             display: none;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: 700;
-            line-height: 1.5;
+            line-height: 1.6;
             color: #334155;
-            box-shadow: inset 0 2px 10px rgba(0,0,0,0.02);
-            animation: cardPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            animation: springUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
         }
 
-        @keyframes cardPop {
-            from { opacity: 0; transform: translateY(30px) scale(0.9); }
+        @keyframes springUp {
+            from { opacity: 0; transform: translateY(40px) scale(0.8); }
             to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
-        .controls { display: flex; flex-direction: column; gap: 12px; margin-top: 30px; }
-        .btn-primary {
+        .btn-draw {
+            width: 100%;
+            padding: 18px;
+            border-radius: 22px;
+            border: none;
             background: var(--accent-blue);
-            color: white; border: none; padding: 18px; border-radius: 22px;
-            font-weight: 800; font-size: 1.1rem; cursor: pointer;
-            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
-            transition: all 0.3s;
+            color: white;
+            font-weight: 800;
+            font-size: 1.1rem;
+            margin-top: 30px;
+            cursor: pointer;
+            box-shadow: 0 12px 24px rgba(59, 130, 246, 0.3);
         }
-        .btn-primary:active { transform: translateY(3px); box-shadow: none; }
-        .btn-text { background: transparent; border: none; color: #64748b; font-weight: 600; cursor: pointer; padding: 10px; }
+
+        .btn-draw:active { transform: translateY(2px); box-shadow: none; }
+
+        .btn-back {
+            background: transparent;
+            border: none;
+            color: #94a3b8;
+            font-weight: 700;
+            font-size: 0.8rem;
+            margin-top: 15px;
+            cursor: pointer;
+            text-decoration: underline;
+        }
 
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div class="container" id="main-container">
-    <div id="menu-screen">
+<div class="container">
+    <div id="home-screen">
         <h1>Us Together 💙</h1>
-        <p class="subtitle">Pick a vibe to start chatting!</p>
+        <p class="subtitle">Pilih vibenya buat obrolan kita</p>
+        
         <div class="menu-grid">
-            <button class="btn-cat" style="background: var(--c1)" onclick="start('daily')">🌤️</button>
-            <button class="btn-cat" style="background: var(--c2)" onclick="start('feeling')">🫶</button>
-            <button class="btn-cat" style="background: var(--c3)" onclick="start('pov')">🧠</button>
-            <button class="btn-cat" style="background: var(--c4)" onclick="start('ldr')">📱</button>
-            <button class="btn-cat" style="background: var(--c5)" onclick="start('home')">👨‍👩‍👧</button>
-            <button class="btn-cat" style="background: var(--c6)" onclick="start('friends')">🧑‍🤝‍🧑</button>
-            <button class="btn-cat" style="background: var(--c7)" onclick="start('school')">🎒</button>
-            <button class="btn-cat" style="background: var(--c8)" onclick="start('rare')">💛</button>
-            <button class="btn-cat" style="background: var(--c9)" onclick="start('filter')">😏</button>
-            <button class="btn-cat btn-random" onclick="start('random')">🎲 Random Mix</button>
+            <div class="cat-item" onclick="start('daily')">
+                <div class="icon-box" style="background: var(--c1)">🌤️</div>
+                <span class="cat-label">Daily Story</span>
+            </div>
+            <div class="cat-item" onclick="start('feeling')">
+                <div class="icon-box" style="background: var(--c2)">🫶</div>
+                <span class="cat-label">Feeling</span>
+            </div>
+            <div class="cat-item" onclick="start('pov')">
+                <div class="icon-box" style="background: var(--c3)">🧠</div>
+                <span class="cat-label">Perspective</span>
+            </div>
+            <div class="cat-item" onclick="start('ldr')">
+                <div class="icon-box" style="background: var(--c4)">📱</div>
+                <span class="cat-label">LDR Talk</span>
+            </div>
+            <div class="cat-item" onclick="start('family')">
+                <div class="icon-box" style="background: var(--c5)">👨‍👩‍👧</div>
+                <span class="cat-label">Keluarga</span>
+            </div>
+            <div class="cat-item" onclick="start('social')">
+                <div class="icon-box" style="background: var(--c6)">🧑‍🤝‍🧑</div>
+                <span class="cat-label">Social</span>
+            </div>
+            <div class="cat-item" onclick="start('care')">
+                <div class="icon-box" style="background: var(--c7)">💛</div>
+                <span class="cat-label">Care</span>
+            </div>
+            <div class="cat-item" onclick="start('playful')">
+                <div class="icon-box" style="background: var(--c8)">😏</div>
+                <span class="cat-label">Playful</span>
+            </div>
+            <div class="cat-item" onclick="start('reality')">
+                <div class="icon-box" style="background: var(--c9)">🧠</div>
+                <span class="cat-label">Reality</span>
+            </div>
+            
+            <button class="btn-random" onclick="start('random')">🎲 RANDOM MIX</button>
         </div>
     </div>
 
     <div id="game-screen">
-        <div class="cat-tag" id="game-title" style="font-weight: 800; color: var(--accent-blue); margin-bottom: 10px;">VIBE</div>
-        <div class="paper-zone" id="paper">✨</div>
-        <div class="question-card" id="q-card"></div>
-        <div class="controls">
-            <button class="btn-primary" id="draw-btn" onclick="draw()">Buka Gulungan</button>
-            <button class="btn-text" onclick="home()">Back to Home</button>
-        </div>
+        <div class="vibe-tag" id="vibe-title">CATEGORY</div>
+        <div class="roll-circle" id="roll-icon">✨</div>
+        <div class="question-card" id="q-box"></div>
+        <button class="btn-draw" id="btn-draw" onclick="draw()">Buka Gulungan</button>
+        <button class="btn-back" onclick="goHome()">Back to Home</button>
     </div>
 </div>
 
 <script>
-    const data = {
-        daily: ["kalau lagi capek banget, biasanya kamu tipe yang tetap jalanin atau butuh pause dulu?", "hari kamu tuh lebih sering capek fisik atau capek pikiran?", "aktivitas yang paling kamu nikmatin walaupun simple itu apa?", "kamu tipe orang yang suka rutinitas atau lebih suka yang random?", "kalau lagi bad day, biasanya kamu ngapain biar balik normal lagi?", "kamu lebih produktif pagi, siang, atau malam?", "hal kecil apa di hari kamu yang paling sering bikin kamu kesel tapi jarang kamu ceritain?", "kamu lebih suka hari yang sibuk atau hari yang santai banget?", "kalau hari kamu difilmkan, bagian mana yang paling seru menurut kamu?", "kamu tipe yang butuh “me time” gak sih?"],
-        feeling: ["kalau lagi capek, kamu lebih pengen ditemenin atau sendiri dulu?", "kamu kalau cerita ke orang, lebih pengen didenger atau dibantu cari solusi?", "kamu gampang cerita ke orang atau butuh waktu dulu?", "kamu ngerasa lega gak sih setelah cerita ke aku?", "kalau lagi bad mood, kamu lebih pengen dihibur atau didiemin?", "kamu kalau lagi diem biasanya lagi mikir atau lagi cape aja?", "kamu tipe yang gampang kangen atau santai aja?", "kamu kalau lagi overthinking biasanya ngapain?", "kamu ngerasa nyaman gak sih jadi diri sendiri di depan aku?", "kamu kalau lagi capek lebih butuh kata-kata atau tindakan?"],
-        pov: ["menurut kamu aku orangnya lebih ke santai, serius, atau campuran?", "aku keliatan orangnya gampang dipahami atau suka bikin bingung?", "kamu ngerasa aku terlalu effort atau masih normal?", "aku keliatan clingy gak sih jujur?", "kamu ngerasa aku nenangin atau malah bikin kamu mikir?", "menurut kamu aku orangnya konsisten gak?", "kamu ngerasa aku terlalu sering initiate atau justru pas?", "kamu lebih nyaman aku kayak sekarang atau lebih santai lagi?", "kamu ngerasa aku cukup ngerti kamu belum?", "kalau disuruh deskripsiin aku ke orang lain, kamu bakal bilang aku kayak gimana?"],
-        ldr: ["menurut kamu LDR itu yang paling susah di bagian mana?", "kamu lebih butuh komunikasi sering atau yang penting berkualitas?", "kamu kalau lagi kangen biasanya pengen ngapain?", "kamu nyaman gak sih kalau kita call tapi diem-diem aja?", "kamu tipe yang kalau kangen langsung bilang atau dipendem?", "menurut kamu idealnya kita call seberapa sering?", "kamu kalau lagi sibuk pengen tetap dichat atau nanti aja?", "kamu ngerasa komunikasi kita sekarang udah pas belum?", "kamu kalau lagi ilang (sibuk/tidur), pengennya aku gimana?", "menurut kamu biar LDR kita tetep enak, hal apa yang paling penting dijaga?", "kamu ngerasa kita terlalu cepat atau masih normal?", "kamu lebih suka kita kayak sekarang atau lebih slow?", "kamu kalau aku gak chat duluan bakal nyariin gak?", "menurut kamu, hal kecil apa yang bisa bikin hubungan kita tetap hangat walaupun jauh?", "kamu lebih butuh kehadiran (call/chat) atau rasa “ada” walaupun gak terus ngobrol?"],
-        home: ["kamu dekat gak sih sama orang tua kamu?", "kamu kalau ada masalah biasanya cerita ke orang tua atau enggak?", "hal apa yang paling kamu harapin dari orang tua kamu?", "ada gak hal yang pengen banget kamu denger dari orang tua tapi jarang diucapin?", "kamu lebih dekat ke ibu atau ayah?", "suasana rumah kamu lebih ke santai atau strict?", "kamu tipe yang terbuka ke keluarga atau lebih banyak simpen sendiri?", "ada gak kebiasaan keluarga kamu yang kamu suka banget?", "kalau lagi capek, rumah itu jadi tempat nyaman atau malah biasa aja?", "kamu ngerasa keluarga kamu ngerti kamu belum?"],
-        friends: ["kamu tipe yang punya banyak temen atau circle kecil?", "kamu biasanya jadi yang banyak cerita atau pendengar?", "kamu gampang percaya sama orang atau selektif?", "di circle kamu, kamu lebih sering update atau malah ketinggalan info? 😆", "kamu kalau lagi ada masalah lebih milih cerita ke temen atau simpen sendiri?", "kamu pernah ngerasa gak dimengerti sama temen?", "kamu tipe yang suka nongkrong atau lebih suka di rumah?", "menurut kamu temen yang ideal itu kayak gimana?", "kamu gampang nyaman sama orang baru gak?", "kamu lebih suka hubungan yang intens atau santai aja?"],
-        school: ["waktu sekolah kamu tipe yang aktif atau biasa aja?", "pelajaran yang paling kamu suka dulu apa?", "kamu lebih suka masa sekolah atau sekarang?", "kamu tipe yang banyak temen di sekolah atau sedikit tapi dekat?", "ada momen sekolah yang paling kamu inget sampai sekarang?", "kamu dulu lebih fokus belajar atau santai?", "kamu pernah punya fase awkward di sekolah? 😆", "guru yang paling kamu inget itu kayak gimana?", "kamu tipe yang ikut organisasi atau enggak?", "masa sekolah kamu lebih banyak drama atau chill?"],
-        rare: ["hal kecil apa yang berarti banget buat kamu tapi jarang orang notice?", "kamu ngerasa paling dihargai itu dari hal apa?", "hal kecil apa yang bisa bikin mood kamu langsung naik?", "kamu lebih suka diperhatiin lewat kata-kata atau tindakan kecil?", "ada gak hal yang kamu pengen orang ngerti tentang kamu tanpa kamu harus jelasin?", "kamu lebih takut kehilangan orang atau kehilangan rasa?", "kamu tipe yang gampang memaafkan atau butuh waktu?", "hal kecil apa yang bikin kamu ngerasa “aku disayang”?", "kamu lebih suka hubungan yang tenang atau yang penuh excitement?", "kamu tipe yang kalau sayang nunjukin atau dipendem?"],
-        filter: ["kalau kamu bisa jujur 100% tanpa takut disalahpahami, apa yang pengen kamu bilang ke aku?", "ada gak hal yang kamu pengen tanyain ke aku tapi belum sempet?", "kamu pernah kepikiran sesuatu tentang aku tapi gak kamu bilang?", "kamu ngerasa ada hal yang masih belum kamu tau dari aku?", "kamu lebih suka aku kayak sekarang atau ada yang pengen kamu ubah?", "kamu pernah ragu sama aku gak?", "kamu ngerasa kita udah di jalur yang bener belum?", "ada gak hal kecil dari aku yang sebenernya kamu notice tapi gak pernah bilang?", "kamu ngerasa nyaman sepenuhnya belum sama aku?", "kalau hubungan ini mau dibawa serius, hal apa yang paling penting buat kamu?"]
+    const questions = {
+        daily: [
+            "Bagian mana dari hari kamu yang paling pengen kamu ceritain ke aku duluan sebelum ke orang lain?",
+            "Hari ini jujur deh, kamu ngerasa ditemenin sama aku atau malah berasa kayak lagi berjuang sendiri?",
+            "Ada nggak sih momen tadi yang bikin kamu mikir, 'Duh, andai ada dia di sini pasti bakal beda'?",
+            "Dari semua aktivitas kamu hari ini, bagian mana yang kamu pengen aku beneran paham rasanya?",
+            "Kalau tadi aku ada di samping kamu pas kamu lagi [sebutkan hal spesifik], kira-kira aku bakal bantuin atau malah bikin makin riweh?",
+            "Hari ini kamu lebih pengen aku dengerin keluh kesah kamu atau mending aku hibur biar lupa masalah?",
+            "Seandainya hari ini kita bareng terus, kamu bakal ngerasa full energy atau malah butuh space buat napas?",
+            "Ada nggak kejadian sepele hari ini yang bikin kamu pengen langsung buka HP buat chat aku?",
+            "Kalau hari ini bisa diulang lagi tapi ada aku di sana, bagian mana yang mau kamu ubah?",
+            "Jujur, menurut kamu aku udah cukup 'hadir' di sela-sela kesibukan kamu hari ini belum?"
+        ],
+        feeling: [
+            "Pas kamu lagi capek banget, aku mendingan cerewet buat hibur kamu atau mending diem nemenin kamu istirahat?",
+            "Kalau lagi cerita, kamu lebih butuh aku dengerin sambil ngasih pelukan virtual atau bantuin cari solusi?",
+            "Pernah nggak kamu ngerasa ragu mau cerita hal random karena takut aku nggak bakal nyambung?",
+            "Kalau mood kamu lagi berantakan, aku mendingan tetep ada di chat atau mending kasih kamu waktu buat tenang dulu?",
+            "Kamu tipe yang kalau lagi capek pengen dimanja terus atau malah risih kalau ditanya-tanya terus?",
+            "Sejauh ini, aku udah beneran paham belum sih cara paling pas buat nanganin kamu pas lagi burnout?",
+            "Kalau kamu lagi diem, kamu pengen aku peka sendiri atau kamu lebih suka kalau aku nanya langsung?",
+            "Kamu lebih nyaman kita bahas masalah pelan-pelan atau mending langsung tuntasin semuanya saat itu juga?",
+            "Pas lagi overthinking, kehadiran aku itu ngebantu nenenangin atau malah bikin kamu tambah mikir?",
+            "Di titik mana yang bikin kamu ngerasa kalau aku ini beneran 'rumah' yang nyaman buat kamu?"
+        ],
+        pov: [
+            "Kamu ngerasa porsi perhatian kita udah balance, atau ada yang ngerasa lebih banyak berjuang sendiri?",
+            "Chat dari aku itu sebenernya bikin kamu semangat tiap hari atau kadang malah jadi beban buat kamu bales?",
+            "Menurut kamu, aku ini tipe orang yang gampang banget kamu tebak atau malah sering bikin kamu bingung?",
+            "Perhatian aku ke kamu selama ini menurut kamu udah pas, atau kadang kerasa terlalu berlebihan?",
+            "Kamu sebenernya lebih suka aku yang sering update kegiatan atau yang santai-santai aja kayak sekarang?",
+            "Jujur, kehadiran aku itu bikin pikiran kamu jadi lebih tenang atau malah nambah beban pikiran baru?",
+            "Kamu lebih nyaman kalau aku banyak nanya tentang kamu, atau kamu lebih suka cerita sendiri tanpa dipancing?",
+            "Di mata kamu, aku ini sosok yang beneran serius pengen masa depan sama kamu atau cuma buat seru-seruan doang?",
+            "Ada nggak sifat aku yang menurut kamu harus dikurangi biar kita makin enak jalannya?",
+            "Pernah nggak kamu ngerasa aku terlalu banyak kasih effort sampai kamunya jadi ngerasa nggak enak?"
+        ],
+        ldr: [
+            "Dengan cara kita komunikasi sekarang, kamu udah ngerasa deket sama aku atau masih berasa ada 'tembok' jarak?",
+            "Kamu sebenernya tipe yang butuh chat tiap saat atau yang penting komunikasi kita jelas walaupun jarang?",
+            "Mana yang lebih bikin kamu ngerasa disayang: denger suara aku lewat telepon atau dapet chat panjang pas kamu bangun tidur?",
+            "Kalau lagi kangen berat, biasanya apa sih yang kamu lakuin buat ngilangin rasa pengen ketemu itu?",
+            "Pas kamu lagi sibuk, kamu lebih suka aku tetep kirim chat random atau mending aku tunggu sampai kamu luang?",
+            "Kamu ngerasa hubungan kita ini terlalu intens sampai bikin sesek, atau porsinya udah normal-normal aja?",
+            "Kamu lebih suka kita punya jadwal rutin buat teleponan atau mending spontan aja pas lagi pengen?",
+            "Pas salah satu dari kita 'hilang' karena tidur atau sibuk, kamu pengennya kita gimana biar nggak jadi salah paham?",
+            "Apa satu hal paling krusial yang menurut kamu wajib banget kita jaga biar LDR ini tetep asik dijalani?",
+            "Kamu ngerasa aku selalu ada di saat yang kamu butuhkan, atau aku cuma ada pas aku lagi luang aja?"
+        ],
+        family: [
+            "Pas kamu lagi ada masalah berat, orang pertama yang pengen kamu tuju itu keluarga atau malah aku?",
+            "Kamu itu tipe yang terbuka banget sama keluarga tentang urusan asmara atau lebih suka simpen sendiri?",
+            "Sejujurnya, kamu udah ngerasa yakin belum buat ngenalin aku ke lingkungan keluarga kamu suatu saat nanti?",
+            "Bentuk perhatian kayak gimana dari aku yang bikin kamu ngerasa udah diterima kayak keluarga sendiri?",
+            "Pernah nggak aku ngelakuin hal yang menurut kamu 'Duh, ini anak kurang dewasa banget deh'?",
+            "Kamu pengennya nanti pasangan kamu itu akrab banget sama keluarga kamu atau yang penting saling kenal aja?",
+            "Bagian mana dari diri aku yang kira-kira bakal bikin keluarga kamu suka atau malah ragu sama aku?",
+            "Kamu ngerasa aku bisa jadi tempat cerita yang sebanding nggak sama kenyamanan yang kamu dapetin di rumah?",
+            "Kalau nanti aku ketemu orang tua kamu, kamu pengen aku jadi sosok yang kayak gimana di depan mereka?",
+            "Di mata kamu, aku ini udah cukup 'dewasa' belum buat dampingin kamu di depan keluarga besar nanti?"
+        ],
+        social: [
+            "Nama aku pernah nggak sih mampir di obrolan kamu pas lagi kumpul bareng temen-temen deket kamu?",
+            "Kamu sebenernya tipe yang pengen dunia tahu tentang kita atau mendingan lowkey aja biar kita yang nikmatin?",
+            "Menurut pengamatan kamu, kira-kira aku bakal nyambung nggak sih kalau diajak masuk ke circle pertemanan kamu?",
+            "Pas kamu lagi seru-seruan sama temen, pernah nggak tiba-tiba kepikiran pengen aku ada di sana juga?",
+            "Kamu lebih suka cerita masalah hubungan kita ke temen atau mending kita selesain berdua aja tanpa campur tangan orang luar?",
+            "Apa hal yang paling membedakan aku sama orang-orang yang pernah ada di sekitar kamu sebelumnya?",
+            "Kamu lebih nyaman sama hubungan yang saking santainya jadi kayak temen, atau yang harus jelas aturannya?",
+            "Kamu itu orangnya gampang percaya sama orang baru atau butuh waktu lama buat beneran buka hati kayak ke aku?",
+            "Kamu ngerasa aku bisa jadi 'prioritas utama' kamu nggak dibandingin sama temen-temen kamu yang lain?",
+            "Kira-kira temen kamu bakal kaget nggak pas tahu kalau aku orangnya ternyata kayak gini?"
+        ],
+        care: [
+            "Momen apa sih yang paling bikin kamu ngerasa beneran disayang sama aku tanpa aku harus ngomong?",
+            "Kamu lebih suka aku bantu nyariin solusi buat masalah kamu atau cukup dengerin kamu sambat aja?",
+            "Perhatian aku ke kamu selama ini menurut kamu udah pas, atau ada bagian yang bikin kamu ngerasa terbebani?",
+            "Kamu lebih suka aku sering nanya 'lagi apa' atau mending aku langsung action aja pas kamu butuh?",
+            "Sejauh ini, kamu ngerasa aku udah cukup peduli sama hal-hal kecil tentang kamu belum?",
+            "Mana yang lebih kamu hargai: kejutan besar tapi jarang, atau perhatian-perhatian kecil tapi tiap hari ada?",
+            "Menurut kamu, aku udah beneran paham belum cara yang paling pas buat memperlakukan kamu?",
+            "Kamu lebih suka aku nemenin kamu secara fisik (kalau bisa) atau cukup hadir lewat dukungan mental aja?",
+            "Kamu ngerasa aku terlalu banyak 'memberi' di hubungan ini sampai kamu bingung mau balesnya gimana?",
+            "Ada nggak cara perhatian aku yang menurut kamu harus diubah biar kamu lebih nyaman?"
+        ],
+        playful: [
+            "Kamu lebih suka aku yang banyak omong dan cerewet atau aku yang lebih kalem tapi sekali ngomong bikin adem?",
+            "Kalau tiba-tiba aku diem dan nggak banyak bercanda kayak biasanya, kamu bakal ngerasa aneh nggak?",
+            "Jujur ya, panggilan sayang dari aku itu bikin kamu baper atau malah kerasa geli di kuping?",
+            "Kamu lebih suka aku yang sering jahilin kamu sampai kesel, atau aku yang mode serius terus?",
+            "Di mata kamu, aku ini sebenernya orang yang receh dan lucu atau malah garing banget?",
+            "Pas aku lagi godain kamu, kamu sebenernya ngerasa seneng atau cuma pura-pura ketawa aja?",
+            "Kamu tipe yang bakal gengsi banget kalau digodain atau malah makin jadi buat ngebales godaan aku?",
+            "Kamu lebih suka aku yang pinter flirting dikit-dikit atau mending aku lempeng-lempeng aja?",
+            "Pernah nggak sih kamu ngerasa 'Ih, ini orang kenapa jadi perhatian banget, mencurigakan'?",
+            "Kalau aku agak cuek dikit, kamu bakal nyariin atau malah ngerasa lebih bebas?"
+        ],
+        reality: [
+            "Sejujurnya, kamu ngerasa komunikasi kita akhir-akhir ini lebih banyak aku yang mulai atau kita udah gantian?",
+            "Ada nggak bagian dari cara kita ngobrol sekarang yang menurut kamu harus kita perbaiki bareng-bareng?",
+            "Kamu ngerasa aku orangnya terlalu 'tersedia' terus buat kamu, atau porsinya udah pas buat kamu kangenin?",
+            "Menurut kamu, kita berdua ini udah beneran seimbang dalam hal kasih usaha buat hubungan ini?",
+            "Kalau sehari aja aku nggak chat duluan, kira-kira kamu bakal nungguin atau kamu yang bakal nyariin aku duluan?",
+            "Kamu ngerasa kita udah beneran saling kenal luar dalem, atau masih banyak yang kita tutup-tutupin?",
+            "Lebih suka hubungan yang progresnya cepet banget kayak gini, atau kamu pengen kita lebih santai lagi?",
+            "Pernah nggak kamu mikir kalau hubungan kita ini sebenernya cuma karena kita lagi sama-sama butuh temen aja?",
+            "Di titik mana yang bikin kamu yakin kalau kita ini punya tujuan yang sama buat kedepannya?",
+            "Kalau kita jalan terus sampai jauh, apa satu hal yang paling kamu takutin bakal berubah dari kita berdua?"
+        ]
     };
 
-    let queue = [];
-    const special = "menurut kamu kita perlu ada waktu buat telfon tiap hari gak?";
+    let activeQueue = [];
 
     function start(cat) {
         let pool = [];
-        let label = "";
-        if(cat === 'random') {
-            Object.values(data).forEach(a => pool.push(...a));
-            label = "🎲 Random Mix";
+        let title = "";
+        
+        if (cat === 'random') {
+            Object.values(questions).forEach(list => pool.push(...list));
+            title = "🎲 Random Mix";
         } else {
-            pool = [...data[cat]];
-            const titles = {daily:"🌤️ Daily", feeling:"🫶 Feeling", pov:"🧠 Perspective", ldr:"📱 LDR Talk", home:"🏠 Home", friends:"🧑‍🤝‍🧑 Friends", school:"🎒 School", rare:"💛 Rare", filter:"😏 Filter"};
-            label = titles[cat];
+            pool = [...questions[cat]];
+            const names = {daily:"🌤️ Daily", feeling:"🫶 Feeling", pov:"🧠 POV", ldr:"📱 LDR", family:"👨‍👩‍👧 Keluarga", social:"🧑‍🤝‍🧑 Social", care:"💛 Care", playful:"😏 Playful", reality:"🧠 Reality"};
+            title = names[cat];
         }
 
+        // Shuffle
         pool.sort(() => Math.random() - 0.5);
-        const idx = Math.random() < 0.5 ? 1 : 3;
-        pool = pool.filter(q => q !== special);
-        pool.splice(idx, 0, special);
+        activeQueue = pool;
 
-        queue = pool;
-        document.getElementById('menu-screen').style.display = 'none';
+        document.getElementById('home-screen').style.display = 'none';
         document.getElementById('game-screen').style.display = 'block';
-        document.getElementById('game-title').innerText = label;
-        resetUI();
+        document.getElementById('vibe-title').innerText = title;
+        resetGame();
     }
 
     function draw() {
-        if(queue.length === 0) {
-            alert("Habis! Pilih topik lain yuk? ✨");
-            home(); return;
+        if (activeQueue.length === 0) {
+            alert("Udah habis vibenya! Pilih yang lain ya ✨");
+            goHome(); return;
         }
 
-        const p = document.getElementById('paper');
-        const c = document.getElementById('q-card');
-        const b = document.getElementById('draw-btn');
+        const icon = document.getElementById('roll-icon');
+        const box = document.getElementById('q-box');
+        const btn = document.getElementById('btn-draw');
 
-        c.style.display = 'none';
-        b.disabled = true;
-        p.innerText = "🌀";
-        p.classList.add('shaking');
+        box.style.display = 'none';
+        btn.disabled = true;
+        icon.innerText = "🌀";
+        icon.classList.add('shaking');
 
         setTimeout(() => {
-            p.classList.remove('shaking');
-            p.innerText = "📜";
-            const pick = queue.shift();
-            c.innerText = pick;
-            c.style.display = 'flex';
-            b.disabled = false;
-            b.innerText = "Lanjut Lagi ✨";
+            icon.classList.remove('shaking');
+            icon.innerText = "📜";
+            const pick = activeQueue.shift();
+            box.innerText = pick;
+            box.style.display = 'flex';
+            btn.disabled = false;
+            btn.innerText = "Lanjut Lagi ✨";
         }, 1200);
     }
 
-    function resetUI() {
-        document.getElementById('q-card').style.display = 'none';
-        document.getElementById('paper').innerText = "✨";
-        document.getElementById('draw-btn').innerText = "Buka Gulungan";
-        document.getElementById('draw-btn').disabled = false;
+    function resetGame() {
+        document.getElementById('q-box').style.display = 'none';
+        document.getElementById('roll-icon').innerText = "✨";
+        document.getElementById('btn-draw').innerText = "Buka Gulungan";
     }
 
-    function home() {
-        document.getElementById('menu-screen').style.display = 'block';
+    function goHome() {
+        document.getElementById('home-screen').style.display = 'block';
         document.getElementById('game-screen').style.display = 'none';
     }
 </script>
