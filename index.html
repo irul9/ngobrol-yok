@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Us Together 💙</title>
+    <title>Us Together 🩷</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght=500;700;800&display=swap');
 
         :root {
-            --bg-main: #f0f9ff;
-            --glass: rgba(255, 255, 255, 0.85);
-            --accent-blue: #3b82f6;
-            --text-dark: #1e293b;
+            --bg-main: #fff5f5;
+            --glass: rgba(255, 255, 255, 0.88);
+            --accent-pink: #f472b6;
+            --text-dark: #334155;
             
-            --c1: #60a5fa; --c2: #fb7185; --c3: #34d399; 
-            --c4: #818cf8; --c5: #fbbf24; --c6: #a78bfa;
-            --c7: #f472b6; --c8: #fb923c; --c9: #2dd4bf;
-            --c-rand: #ef4444;
+            --c1: #fbcfe8; --c2: #f9a8d4; --c3: #f472b6; 
+            --c4: #ec4899; --c5: #db2777; --c6: #be185d;
+            --c7: #fda4af; --c8: #f43f5e; --c9: #fb7185; --c10: #f472b6;
+            --c-rand: #f43f5e;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -24,7 +24,7 @@
         body {
             font-family: 'Quicksand', sans-serif;
             background: var(--bg-main);
-            background-image: radial-gradient(at 0% 0%, #dbeafe 0, transparent 50%), radial-gradient(at 50% 0%, #e0f2fe 0, transparent 50%);
+            background-image: radial-gradient(at 0% 0%, #ffe4e6 0, transparent 50%), radial-gradient(at 50% 0%, #fce7f3 0, transparent 50%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -39,13 +39,13 @@
             backdrop-filter: blur(15px);
             padding: 2rem 1.5rem;
             border-radius: 45px;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 25px 50px -12px rgba(251, 113, 133, 0.12);
             text-align: center;
         }
 
-        h1 { font-size: 1.8rem; font-weight: 800; margin-bottom: 5px; color: #0f172a; }
-        .subtitle { font-size: 0.85rem; opacity: 0.6; margin-bottom: 2rem; font-weight: 600; }
+        h1 { font-size: 1.8rem; font-weight: 800; margin-bottom: 5px; color: #4c0519; }
+        .subtitle { font-size: 0.85rem; opacity: 0.7; margin-bottom: 2rem; font-weight: 600; color: #881337; }
 
         .menu-grid {
             display: grid;
@@ -72,14 +72,14 @@
             align-items: center;
             justify-content: center;
             font-size: 1.8rem;
-            box-shadow: 0 8px 15px rgba(0,0,0,0.05);
-            border: 1px solid rgba(255,255,255,0.3);
+            box-shadow: 0 8px 15px rgba(244, 114, 182, 0.15);
+            border: 1px solid rgba(255,255,255,0.4);
         }
 
         .cat-label {
             font-size: 0.65rem;
             font-weight: 700;
-            color: #64748b;
+            color: #9d174d;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -94,7 +94,7 @@
             font-size: 0.9rem;
             border: none;
             cursor: pointer;
-            box-shadow: 0 10px 20px rgba(239, 68, 68, 0.2);
+            box-shadow: 0 10px 20px rgba(244, 63, 94, 0.25);
             margin-top: 10px;
         }
 
@@ -104,7 +104,7 @@
             font-size: 0.7rem;
             font-weight: 800;
             letter-spacing: 2px;
-            color: var(--accent-blue);
+            color: var(--accent-pink);
             margin-bottom: 15px;
             text-transform: uppercase;
         }
@@ -119,7 +119,7 @@
             align-items: center;
             justify-content: center;
             font-size: 2.5rem;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 25px rgba(244, 114, 182, 0.1);
         }
 
         .shaking { animation: fastShake 0.4s infinite alternate; }
@@ -139,7 +139,8 @@
             font-size: 1.1rem;
             font-weight: 700;
             line-height: 1.6;
-            color: #334155;
+            color: #4c0519;
+            border: 1px solid #ffe4e6;
             animation: springUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
@@ -153,19 +154,19 @@
             padding: 18px;
             border-radius: 22px;
             border: none;
-            background: var(--accent-blue);
+            background: var(--accent-pink);
             color: white;
             font-weight: 800;
             font-size: 1.1rem;
             margin-top: 30px;
             cursor: pointer;
-            box-shadow: 0 12px 24px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 12px 24px rgba(244, 114, 182, 0.35);
         }
 
         .btn-back {
             background: transparent;
             border: none;
-            color: #94a3b8;
+            color: #f472b6;
             font-weight: 700;
             font-size: 0.8rem;
             margin-top: 15px;
@@ -178,17 +179,18 @@
 
 <div class="container">
     <div id="home-screen">
-        <h1>Us Together 💙</h1>
+        <h1>Us Together 🩷</h1>
         <p class="subtitle">Pilih vibenya buat obrolan kita</p>
         <div class="menu-grid">
             <div class="cat-item" onclick="start('daily')"><div class="icon-box" style="background: var(--c1)">🌤️</div><span class="cat-label">Daily</span></div>
             <div class="cat-item" onclick="start('feeling')"><div class="icon-box" style="background: var(--c2)">🫶</div><span class="cat-label">Feeling</span></div>
             <div class="cat-item" onclick="start('pov')"><div class="icon-box" style="background: var(--c3)">🧠</div><span class="cat-label">Perspective</span></div>
-            <div class="cat-item" onclick="start('family')"><div class="icon-box" style="background: var(--c5)">👨‍👩‍👧</div><span class="cat-label">Keluarga</span></div>
-            <div class="cat-item" onclick="start('social')"><div class="icon-box" style="background: var(--c6)">🧑‍🤝‍🧑</div><span class="cat-label">Social</span></div>
-            <div class="cat-item" onclick="start('care')"><div class="icon-box" style="background: var(--c7)">💛</div><span class="cat-label">Care</span></div>
-            <div class="cat-item" onclick="start('playful')"><div class="icon-box" style="background: var(--c8)">😏</div><span class="cat-label">Playful</span></div>
-            <div class="cat-item" onclick="start('reality')"><div class="icon-box" style="background: var(--c9)">🧠</div><span class="cat-label">Reality</span></div>
+            <div class="cat-item" onclick="start('family')"><div class="icon-box" style="background: var(--c4)">👨‍👩‍👧</div><span class="cat-label">Keluarga</span></div>
+            <div class="cat-item" onclick="start('social')"><div class="icon-box" style="background: var(--c5)">🧑‍🤝‍🧑</div><span class="cat-label">Social</span></div>
+            <div class="cat-item" onclick="start('care')"><div class="icon-box" style="background: var(--c6)">💛</div><span class="cat-label">Care</span></div>
+            <div class="cat-item" onclick="start('playful')"><div class="icon-box" style="background: var(--c7)">😏</div><span class="cat-label">Playful</span></div>
+            <div class="cat-item" onclick="start('reality')"><div class="icon-box" style="background: var(--c8)">🧠</div><span class="cat-label">Reality</span></div>
+            <div class="cat-item" onclick="start('funny')"><div class="icon-box" style="background: var(--c9)">🤪</div><span class="cat-label">Funny</span></div>
             <button class="btn-random" onclick="start('random')">🎲 RANDOM MIX</button>
         </div>
     </div>
@@ -204,18 +206,246 @@
 
 <script>
     const questions = {
-        daily: ["Bagian mana dari hari kamu yang paling pengen kamu ceritain ke aku duluan sebelum ke orang lain?", "Hari ini jujur deh, kamu ngerasa ditemenin sama aku atau malah berasa kayak lagi berjuang sendiri?", "Ada nggak sih momen tadi yang bikin kamu mikir, 'Duh, andai ada dia di sini pasti bakal beda'?", "Dari semua aktivitas kamu hari ini, bagian mana yang kamu pengen aku beneran paham rasanya?", "Kalau tadi aku ada di samping kamu pas kamu lagi [sebutkan hal spesifik], kira-kira aku bakal bantuin atau malah bikin makin riweh?", "Hari ini kamu lebih pengen aku dengerin keluh kesah kamu atau mending aku hibur biar lupa masalah?", "Seandainya hari ini kita bareng terus, kamu bakal ngerasa full energy atau malah butuh space buat napas?", "Ada nggak kejadian sepele hari ini yang bikin kamu pengen langsung buka HP buat chat aku?", "Kalau hari ini bisa diulang lagi tapi ada aku di sana, bagian mana yang mau kamu ubah?", "Jujur, menurut kamu aku udah cukup 'hadir' di sela-sela kesibukan kamu hari ini belum?"],
-        feeling: ["Pas kamu lagi capek banget, aku mendingan cerewet buat hibur kamu atau mending diem nemenin kamu istirahat?", "Kalau lagi cerita, kamu lebih butuh aku dengerin sambil ngasih pelukan virtual atau bantuin cari solusi?", "Pernah nggak kamu ngerasa ragu mau cerita hal random karena takut aku nggak bakal nyambung?", "Kalau mood kamu lagi berantakan, aku mendingan tetep ada di chat atau mending kasih kamu waktu buat tenang dulu?", "Kamu tipe yang kalau lagi capek pengen dimanja terus atau malah risih kalau ditanya-tanya terus?", "Sejauh ini, aku udah beneran paham belum sih cara paling pas buat nanganin kamu pas lagi burnout?", "Kalau kamu lagi diem, kamu pengen aku peka sendiri atau kamu lebih suka kalau aku nanya langsung?", "Kamu lebih nyaman kita bahas masalah pelan-pelan atau mending langsung tuntasin semuanya saat itu juga?", "Pas lagi overthinking, kehadiran aku itu ngebantu nenenangin atau malah bikin kamu tambah mikir?", "Di titik mana yang bikin kamu ngerasa kalau aku ini beneran 'rumah' yang nyaman buat kamu?"],
-        pov: ["Kamu ngerasa porsi perhatian kita udah balance, atau ada yang ngerasa lebih banyak berjuang sendiri?", "Chat dari aku itu sebenernya bikin kamu semangat tiap hari atau kadang malah jadi beban buat kamu bales?", "Menurut kamu, aku ini tipe orang yang gampang banget kamu tebak atau malah sering bikin kamu bingung?", "Perhatian aku ke kamu selama ini menurut kamu udah pas, atau kadang kerasa terlalu berlebihan?", "Kamu sebenernya lebih suka aku yang sering update kegiatan atau yang santai-santai aja kayak sekarang?", "Jujur, kehadiran aku itu bikin pikiran kamu jadi lebih tenang atau malah nambah beban pikiran baru?", "Kamu lebih nyaman kalau aku banyak nanya tentang kamu, atau kamu lebih suka cerita sendiri tanpa dipancing?", "Di mata kamu, aku ini sosok yang beneran serius pengen masa depan sama kamu atau cuma buat seru-seruan doang?", "Ada nggak sifat aku yang menurut kamu harus dikurangi biar kita makin enak jalannya?", "Pernah nggak kamu ngerasa aku terlalu banyak kasih effort sampai kamunya jadi ngerasa nggak enak?"],
-        family: ["Pas kamu lagi ada masalah berat, orang pertama yang pengen kamu tuju itu keluarga atau malah aku?", "Kamu itu tipe yang terbuka banget sama keluarga tentang urusan asmara atau lebih suka simpen sendiri?", "Sejujurnya, kamu udah ngerasa yakin belum buat ngenalin aku ke lingkungan keluarga kamu suatu saat nanti?", "Bentuk perhatian kayak gimana dari aku yang bikin kamu ngerasa udah diterima kayak keluarga sendiri?", "Pernah nggak aku ngelakuin hal yang menurut kamu 'Duh, ini anak kurang dewasa banget deh'?", "Kamu pengennya nanti pasangan kamu itu akrab banget sama keluarga kamu atau yang penting saling kenal aja?", "Bagian mana dari diri aku yang kira-kira bakal bikin keluarga kamu suka atau malah ragu sama aku?", "Kamu ngerasa aku bisa jadi tempat cerita yang sebanding nggak sama kenyamanan yang kamu dapetin di rumah?", "Kalau nanti aku ketemu orang tua kamu, kamu pengen aku jadi sosok yang kayak gimana di depan mereka?", "Di mata kamu, aku ini udah cukup 'dewasa' belum buat dampingin kamu di depan keluarga besar nanti?"],
-        social: ["Nama aku pernah nggak sih mampir di obrolan kamu pas lagi kumpul bareng temen-temen deket kamu?", "Kamu sebenernya tipe yang pengen dunia tahu tentang kita atau mendingan lowkey aja biar kita yang nikmatin?", "Menurut pengamatan kamu, kira-kira aku bakal nyambung nggak sih kalau diajak masuk ke circle pertemanan kamu?", "Pas kamu lagi seru-seruan sama temen, pernah nggak tiba-tiba kepikiran pengen aku ada di sana juga?", "Kamu lebih suka cerita masalah hubungan kita ke temen atau mending kita selesain berdua aja tanpa campur tangan orang luar?", "Apa hal yang paling membedakan aku sama orang-orang yang pernah ada di sekitar kamu sebelumnya?", "Kamu lebih nyaman sama hubungan yang saking santainya jadi kayak temen, atau yang harus jelas aturannya?", "Kamu itu orangnya gampang percaya sama orang baru atau butuh waktu lama buat beneran buka hati kayak ke aku?", "Kamu ngerasa aku bisa jadi 'prioritas utama' kamu nggak dibandingin sama temen-temen kamu yang lain?", "Kira-kira temen kamu bakal kaget nggak pas tahu kalau aku orangnya ternyata kayak gini?"],
-        care: ["Momen apa sih yang paling bikin kamu ngerasa beneran disayang sama aku tanpa aku harus ngomong?", "Kamu lebih suka aku bantu nyariin solusi buat masalah kamu atau cukup dengerin kamu sambat aja?", "Perhatian aku ke kamu selama ini menurut kamu udah pas, atau ada bagian yang bikin kamu ngerasa terbebani?", "Kamu lebih suka aku sering nanya 'lagi apa' atau mending aku langsung action aja pas kamu butuh?", "Sejauh ini, kamu ngerasa aku udah cukup peduli sama hal-hal kecil tentang kamu belum?", "Mana yang lebih kamu hargai: kejutan besar tapi jarang, atau perhatian-perhatian kecil tapi tiap hari ada?", "Menurut kamu, aku udah beneran paham belum cara yang paling pas buat memperlakukan kamu?", "Kamu lebih suka aku nemenin kamu secara fisik (kalau bisa) atau cukup hadir lewat dukungan mental aja?", "Kamu ngerasa aku terlalu banyak 'memberi' di hubungan ini sampai kamu bingung mau balesnya gimana?", "Ada nggak cara perhatian aku yang menurut kamu harus diubah biar kamu lebih nyaman?"],
-        playful: ["Kamu lebih suka aku yang banyak omong dan cerewet atau aku yang lebih kalem tapi sekali ngomong bikin adem?", "Kalau tiba-tiba aku diem dan nggak banyak bercanda kayak biasanya, kamu bakal ngerasa aneh nggak?", "Jujur ya, panggilan sayang dari aku itu bikin kamu baper atau malah kerasa geli di kuping?", "Kamu lebih suka aku yang sering jahilin kamu sampai kesel, atau aku yang mode serius terus?", "Di mata kamu, aku ini sebenernya orang yang receh dan lucu atau malah garing banget?", "Pas aku lagi godain kamu, kamu sebenernya ngerasa seneng atau cuma pura-pura ketawa aja?", "Kamu tipe yang bakal gengsi banget kalau digodain atau malah makin jadi buat ngebales godaan aku?", "Kamu lebih suka aku yang pinter flirting dikit-dikit atau mending aku lempeng-lempeng aja?", "Pernah nggak sih kamu ngerasa 'Ih, ini orang kenapa jadi perhatian banget, mencurigakan'?", "Kalau aku agak cuek dikit, kamu bakal nyariin atau malah ngerasa lebih bebas?"],
-        reality: ["Sejujurnya, kamu ngerasa komunikasi kita akhir-akhir ini lebih banyak aku yang mulai atau kita udah gantian?", "Ada nggak bagian dari cara kita ngobrol sekarang yang menurut kamu harus kita perbaiki bareng-bareng?", "Kamu ngerasa aku orangnya terlalu 'tersedia' terus buat kamu, atau porsinya udah pas buat kamu kangenin?", "Menurut kamu, kita berdua ini udah beneran seimbang dalam hal kasih usaha buat hubungan ini?", "Kalau sehari aja aku nggak chat duluan, kira-kira kamu bakal nungguin atau kamu yang bakal nyariin aku duluan?", "Kamu ngerasa kita udah beneran saling kenal luar dalem, atau masih banyak yang kita tutup-tutupin?", "Lebih suka hubungan yang progresnya cepet banget kayak gini, atau kamu pengen kita lebih santai lagi?", "Pernah nggak kamu mikir kalau hubungan kita ini sebenernya cuma karena kita lagi sama-sama butuh temen aja?", "Di titik mana yang bikin kamu yakin kalau kita ini punya tujuan yang sama buat kedepannya?", "Kalau kita jalan terus sampai jauh, apa satu hal yang paling kamu takutin bakal berubah dari kita berdua?"]
+        daily: [
+            "Bagian mana dari hari kamu yang paling pengen kamu ceritain ke aku duluan sebelum ke orang lain?", 
+            "Hari ini jujur deh, kamu ngerasa ditemenin sama aku atau malah berasa kayak lagi berjuang sendiri?", 
+            "Ada nggak sih momen tadi yang bikin kamu mikir, 'Duh, andai ada dia di sini pasti bakal beda'?", 
+            "Dari semua aktivitas kamu hari ini, bagian mana yang kamu pengen aku beneran paham rasanya?", 
+            "Kalau tadi aku ada di samping kamu pas kamu lagi sibuk, kira-kira aku bakal bantuin atau malah bikin makin riweh?", 
+            "Hari ini kamu lebih pengen aku dengerin keluh kesah kamu atau mending aku hibur biar lupa masalah?", 
+            "Seandainya hari ini kita bareng terus, kamu bakal ngerasa full energy atau malah butuh space buat napas?", 
+            "Ada nggak kejadian sepele hari ini yang bikin kamu pengen langsung buka HP buat chat aku?", 
+            "Kalau hari ini bisa diulang lagi tapi ada aku di sana, bagian mana yang mau kamu ubah?", 
+            "Jujur, menurut kamu aku udah cukup 'hadir' di sela-sela kesibukan kamu hari ini belum?",
+            "Tadi pas lagi makan siang atau beraktivitas, sempet ada momen random yang bikin kamu inget aku gak?",
+            "Lagu apa yang paling ngegambarin suasana hati atau isi kepala kamu sepanjang hari ini?",
+            "Ada hal kecil yang bikin kamu kesel atau bad mood hari ini tapi belum sempet diceritain?",
+            "Kalau malam ini kita tiba-tiba bisa ketemuan 10 menit aja, kamu mau ngajak aku ngapain?",
+            "Hari ini ada chat atau kelakuan orang lain yang bikin kamu emosi atau ngelus dada gak?",
+            "Apa satu hal paling melelahkan yang kamu hadapi hari ini dan bikin pengen cepet pulang?",
+            "Tadi sempet ngebuka sosmed terus nemu postingan lucu atau menarik yang pengen kamu share ke aku gak?",
+            "Kalau hari ini dikasih rating dari 1 sampai 10, berapa skornya dan apa alasannya?",
+            "Ada gak keputusan kecil yang kamu ambil hari ini terus sekarang kamu sesali?",
+            "Tadi pas lagi capek-capeknya kerja atau belajar, apa self-reward instan yang kamu lakuin?",
+            "Menurut kamu, sapaan 'semangat' dari aku di chat tadi siang itu beneran ngaruh atau biasa aja?",
+            "Ada tugas atau kerjaan hari ini yang bikin kamu pengen ngilang aja dari bumi gak?",
+            "Bagian dari obrolan kita lewat chat hari ini yang paling bikin kamu senyum-senyum sendiri yang mana?",
+            "Kalau malam ini aku ketiduran duluan pas kita lagi asyik deep talk, kamu bakal kesel gak?",
+            "Apa hal pertama yang mau kamu lakuin besok pagi biar harinya lebih oke dari hari ini?"
+        ],
+        feeling: [
+            "Pas kamu lagi capek banget, aku mendingan cerewet buat hibur kamu atau mending diem nemenin kamu istirahat?", 
+            "Kalau lagi cerita, kamu lebih butuh aku dengerin sambil ngasih pelukan virtual atau bantuin cari solusi?", 
+            "Pernah nggak kamu ngerasa ragu mau cerita hal random karena takut aku nggak bakal nyambung?", 
+            "Kalau mood kamu lagi berantakan, aku mendingan tetep ada di chat atau mending kasih kamu waktu buat tenang dulu?", 
+            "Kamu tipe yang kalau lagi capek pengen dimanja terus atau malah risih kalau ditanya-tanya terus?", 
+            "Sejauh ini, aku udah beneran paham belum sih cara paling pas buat nanganin kamu pas lagi burnout?", 
+            "Kalau kamu lagi diem, kamu pengen aku peka sendiri atau kamu lebih suka kalau aku nanya langsung?", 
+            "Kamu lebih nyaman kita bahas masalah pelan-pelan atau mending langsung tuntasin semuanya saat itu juga?", 
+            "Pas lagi overthinking, kehadiran aku itu ngebantu nenenangin atau malah bikin kamu tambah mikir?", 
+            "Di titik mana yang bikin kamu ngerasa kalau aku ini beneran 'rumah' yang nyaman buat kamu?",
+            "Kapan momen terakhir kali kamu ngerasa sedih atau kecewa sama perlakuan aku tapi kamu pilih diem?",
+            "Apa ketakutan terbesar kamu yang belum pernah kamu ceritain ke siapa pun, termasuk ke aku?",
+            "Kelemahan atau sisi rapuh kamu yang mana yang paling takut kamu tunjukin ke aku?",
+            "Pernah gak kamu ngerasa insecure atau kurang pantes bersanding sama aku?",
+            "Bagian mana dari sifat aku yang paling sering bikin kamu ngerasa tenang dan aman?",
+            "Kalau lagi ngerasa kesepian di tengah keramaian, apa yang biasanya paling kamu butuhin dari aku?",
+            "Apa tindakan sederhana dari aku yang bisa langsung ngerubah bad mood kamu jadi full senyum?",
+            "Pernah gak kamu ngerasa kangen banget sama aku tapi sengaja ditahan karena gengsi atau takut ganggu?",
+            "Gimana cara kamu ngebedain rasa sayang kamu ke aku dengan rasa sayang ke orang-orang di masa lalu?",
+            "Ada gak kata-kata atau kritik dari aku yang pernah bikin hati kamu agak nyesek atau terluka?",
+            "Apa hal yang paling sering memicu rasa overthinking kamu tentang kelanjutan hubungan kita?",
+            "Saat kamu lagi ngerasa gak berguna, hal apa yang kamu harap aku lakuin atau ucapkan ke kamu?",
+            "Kamu ngerasa aku udah bisa jadi pendengar yang tulus atau kadang kesannya kayak cuma formalitas?",
+            "Seberapa sering kamu ngerasa emosi kamu kegiring sama naik turunnya mood aku?",
+            "Kalau suatu saat kita harus berantem hebat, kamu tipe yang bakal milih silence treatment atau meledak-ledak?"
+        ],
+        pov: [
+            "Kamu ngerasa porsi perhatian kita udah balance, atau ada yang ngerasa lebih banyak berjuang sendiri?", 
+            "Chat dari aku itu sebenernya bikin kamu semangat tiap hari atau kadang malah jadi beban buat kamu bales?", 
+            "Menurut kamu, aku ini tipe orang yang gampang banget kamu tebak atau malah sering bikin kamu bingung?", 
+            "Perhatian aku ke kamu selama ini menurut kamu udah pas, atau kadang kerasa terlalu berlebihan?", 
+            "Kamu sebenernya lebih suka aku yang sering update kegiatan atau yang santai-santai aja kayak sekarang?", 
+            "Jujur, kehadiran aku itu bikin pikiran kamu jadi lebih tenang atau malah nambah beban pikiran baru?", 
+            "Kamu lebih nyaman kalau aku banyak nanya tentang kamu, atau kamu lebih suka cerita sendiri tanpa dipancing?", 
+            "Di mata kamu, aku ini sosok yang beneran serius pengen masa depan sama kamu atau cuma buat seru-seruan doang?", 
+            "Ada nggak sifat aku yang menurut kamu harus dikurangi biar kita makin enak jalannya?", 
+            "Pernah nggak kamu ngerasa aku terlalu banyak kasih effort sampai kamunya jadi ngerasa nggak enak?",
+            "Menurut pandangan kamu, apa definisi dari sebuah hubungan yang sehat dan ideal itu?",
+            "Kamu ngelihat perbedaan terbesar di antara kita berdua itu ada di bagian mana?",
+            "Seberapa penting penilaian atau opini orang lain tentang hubungan kita buat kamu?",
+            "Menurut kamu, kapan waktu yang tepat buat sepasang kekasih mulai ngomongin komitmen serius?",
+            "Gimana sudut pandang kamu tentang mantan? Masih boleh temenan atau wajib cut-off total?",
+            "Menurut kamu, hal apa yang paling gak bisa dimaafkan dan otomatis bikin hubungan selesai?",
+            "Kamu ngelihat aku sebagai sosok yang dominan atau malah cenderung pasif dalam hubungan?",
+            "Apa pandangan kamu tentang finansial dalam hubungan? Harus 50-50 atau gimana idealnya?",
+            "Menurut kamu, punya kesibukan masing-masing itu memperkuat hubungan atau malah menjauhkan kita?",
+            "Gimana pendapat kamu kalau salah satu dari kita punya sahabat lawan jenis yang deket banget?",
+            "Menurut kamu, apa tanda atau alarm utama kalau hubungan kita ini mulai gak sehat?",
+            "Kamu setuju gak sama prinsip kalau cowok/cewek itu gak akan pernah bisa berubah sifat aslinya?",
+            "Apa pandangan kamu tentang pamer kemesraan atau upload foto pasangan di media sosial?",
+            "Menurut kamu, cinta itu harus diusahain terus tiap hari atau bakal mengalir otomatis gitu aja?",
+            "Gimana cara kamu memandang masa depan kita kalau diukur dari kondisi kita yang sekarang?"
+        ],
+        family: [
+            "Pas kamu lagi ada masalah berat, orang pertama yang pengen kamu tuju itu keluarga atau malah aku?", 
+            "Kamu itu tipe yang terbuka banget sama keluarga tentang urusan asmara atau lebih suka simpen sendiri?", 
+            "Sejujurnya, kamu udah ngerasa yakin belum buat ngenalin aku ke lingkungan keluarga kamu suatu saat nanti?", 
+            "Bentuk perhatian kayak gimana dari aku yang bikin kamu ngerasa udah diterima kayak keluarga sendiri?", 
+            "Pernah nggak aku ngelakuin hal yang menurut kamu 'Duh, ini anak kurang dewasa banget deh'?", 
+            "Kamu pengennya nanti pasangan kamu itu akrab banget sama keluarga kamu atau yang penting saling kenal aja?", 
+            "Bagian mana dari diri aku yang kira-kira bakal bikin keluarga kamu suka atau malah ragu sama aku?", 
+            "Kamu ngerasa aku bisa jadi tempat cerita yang sebanding nggak sama kenyamanan yang kamu dapetin di rumah?", 
+            "Kalau nanti aku ketemu orang tua kamu, kamu pengen aku jadi sosok yang kayak gimana di depan mereka?", 
+            "Di mata kamu, aku ini udah cukup 'dewasa' belum buat dampingin kamu di depan keluarga besar nanti?",
+            "Pola asuh atau kebiasaan di keluarga kamu yang mana yang pengen banget kamu terapkan nanti pas bikin keluarga sendiri?",
+            "Ada gak sih ketakutan kalau sifat buruk orang tua kamu bakal nurun ke diri kamu atau ke hubungan kita?",
+            "Gimana tanggapan keluarga kamu biasanya kalau denger kamu lagi deket atau serius sama seseorang?",
+            "Kalau ternyata keluarga kamu kurang sreg sama aku karena alasan tertentu, kamu bakal maju terus atau mundur?",
+            "Siapa anggota keluarga kamu yang paling protektif dan paling susah buat diambil hatinya?",
+            "Apa tradisi atau kebiasaan unik di rumah kamu yang kira-kira bakal bikin aku kaget pas tahu?",
+            "Kamu lebih deket dan sering deep talk sama Ibu atau sama Ayah kalau lagi ada masalah?",
+            "Pernah gak kamu dibanding-bandingin sama saudara sendiri sampai bikin kamu ngerasa down?",
+            "Gimana kriteria menantu idaman yang sering diucapin atau diharapkan sama orang tua kamu?",
+            "Kalau nanti kita punya anak, kamu pengen jadi tipe orang tua yang tegas banget atau yang santai kayak temen?",
+            "Apa kenangan masa kecil bareng keluarga yang paling ngebekas dan selalu bikin kamu kangen rumah?",
+            "Menurut kamu, restu orang tua itu penentu segalanya dalam hubungan atau cuma formalitas pelengkap?",
+            "Ada gak nilai-nilai dari keluarga kamu yang bertolak belakang banget sama prinsip hidup aku?",
+            "Gimana cara keluarga kamu biasanya merayakan momen penting atau menyelesaikan konflik internal?",
+            "Kamu ngerasa latar belakang keluarga kita berdua itu banyak kemiripan atau malah beda jauh?"
+        ],
+        social: [
+            "Nama aku pernah nggak sih mampir di obrolan kamu pas lagi kumpul bareng temen-temen deket kamu?", 
+            "Kamu sebenernya tipe yang pengen dunia tahu tentang kita atau mendingan lowkey aja biar kita yang nikmatin?", 
+            "Menurut pengamatan kamu, kira-kira aku bakal nyambung nggak sih kalau diajak masuk ke circle pertemanan kamu?", 
+            "Pas kamu lagi seru-seruan sama temen, pernah nggak tiba-tiba kepikiran pengen aku ada di sana juga?", 
+            "Kamu lebih suka cerita masalah hubungan kita ke temen atau mending kita selesain berdua aja tanpa campur tangan orang luar?", 
+            "Apa hal yang paling membedakan aku sama orang-orang yang pernah ada di sekitar kamu sebelumnya?", 
+            "Kamu lebih nyaman sama hubungan yang saking santainya jadi kayak temen, atau yang harus jelas aturannya?", 
+            "Kamu itu orangnya gampang percaya sama orang baru atau butuh waktu lama buat beneran buka hati kayak ke aku?", 
+            "Kamu ngerasa aku bisa jadi 'prioritas utama' kamu nggak dibandingin sama temen-temen kamu yang lain?", 
+            "Kira-kira temen kamu bakal kaget nggak pas tahu kalau aku orangnya ternyata kayak gini?",
+            "Kalau temen deket kamu ada yang terang-terangan bilang gak suka sama aku, apa tindakan kamu?",
+            "Seberapa sering kamu ngerasa FOMO atau iri pas ngelihat hubungan orang lain di media sosial?",
+            "Kamu lebih suka menghabiskan weekend dengan nongkrong rame-rame atau pillow talk berdua aja?",
+            "Ada gak mantan atau orang masa lalu kamu yang sampai sekarang masih satu circle pertemanan sama kamu?",
+            "Gimana cara kamu bersikap kalau ada orang asing yang tiba-tiba flirting atau caper ke kamu di sosmed?",
+            "Menurut kamu, wajar gak sih kalau pacaran tapi password akun sosmed masing-masing harus saling tahu?",
+            "Apa first impression temen-temen kamu pas pertama kali kamu nunjukin foto atau cerita tentang aku?",
+            "Kamu tipe orang yang suka jadi pusat perhatian di tongkrongan atau lebih milih jadi tim penyimak aja?",
+            "Pernah gak kamu ngerasa risih kalau aku terlalu akrab atau asyik ngobrol sama temen-temen kamu?",
+            "Gimana batasan 'temenan sehat' lawan jenis yang menurut kamu masih aman dan gak bikin cemburu?",
+            "Apa hal sosial yang paling bikin kamu males, misalnya basa-basi busuk atau ketemu orang baru?",
+            "Kalau kita lagi jalan terus tiba-tiba ketemu mantan kamu, kamu bakal kenalin aku atau malah salting?",
+            "Seberapa besar pengaruh lingkungan pertemanan kamu dalam membentuk gaya hidup kamu yang sekarang?",
+            "Kamu lebih milih punya temen sedikit tapi loyal banget, atau punya temen banyak tapi cuma sekadar kenal?",
+            "Pernah gak kamu ngerasa tertekan karena ekspektasi atau tuntutan dari lingkungan sosial kamu?"
+        ],
+        care: [
+            "Momen apa sih yang paling bikin kamu ngerasa disayang sama aku tanpa aku harus ngomong?", 
+            "Kamu lebih suka aku bantu nyariin solusi buat masalah kamu atau cukup dengerin kamu sambat aja?", 
+            "Perhatian aku ke kamu selama ini menurut kamu udah pas, atau ada bagian yang bikin kamu ngerasa terbebani?", 
+            "Kamu lebih suka aku sering nanya 'lagi apa' atau mending aku langsung action aja pas kamu bituh?", 
+            "Seharian, kamu ngerasa aku udah cukup peduli sama hal-hal kecil tentang kamu belum?", 
+            "Mana yang lebih kamu hargai: kejutan besar tapi jarang, atau perhatian-perhatian kecil tapi tiap hari ada?", 
+            "Menurut kamu, aku udah beneran paham belum cara yang paling pas buat memperlakukan kamu?", 
+            "Kamu lebih suka aku nemenin kamu secara fisik (kalau bisa) atau cukup hadir lewat dukungan mental aja?", 
+            "Kamu ngerasa aku terlalu banyak 'memberi' di hubungan ini sampai kamu bingung mau balesnya gimana?", 
+            "Ada nggak cara perhatian aku yang menurut kamu harus diubah biar kamu lebih nyaman?",
+            "Saat kamu lagi sakit, kamu lebih suka diurusin total atau mending dibiarin sendiri sampai sembuh?",
+            "Apa love language utama kamu yang paling pengen sering-sering aku lakuin ke kamu?",
+            "Pernah gak kamu ngerasa aku cuek atau abai sama perubahan kecil di diri kamu, misalnya gaya rambut atau mood?",
+            "Bentuk apresiasi atau ucapan terima kasih kayak gimana dari aku yang paling ngebekas di hati kamu?",
+            "Kamu bakal ngerasa lebih dipedulikan kalau aku ngasih hadiah barang berharga atau ngasih waktu luang?",
+            "Ada gak kebiasaan buruk kamu yang kamu harap aku tegas buat ngelarang demi kebaikan kamu sendiri?",
+            "Gimana cara kamu nunjukin rasa peduli ke aku pas kamu sendiri lagi di posisi capek atau stres?",
+            "Pernah gak kamu sengaja kode-kodean karena pengen diperhatiin tapi akunya malah gak peka sama sekali?",
+            "Menurut kamu, mengingatkan sholat, makan, atau tidur itu bentuk kepedulian yang manis atau justru monoton?",
+            "Apa hal sepele tentang fisik atau kesehatan kamu yang kamu kaget ternyata aku sedetail itu inget?",
+            "Kamu ngerasa aku tipe orang yang gampang panik kalau terjadi sesuatu yang buruk sama kamu gak?",
+            "Seberapa sering kamu ngerasa egois karena pengen diperhatiin terus tapi jarang nanya balik kondisi aku?",
+            "Kalau aku lagi down, menurut kamu cara terbaik apa yang bisa kamu lakuin buat naikin mood aku lagi?",
+            "Kamu lebih nyaman dipuji di depan umum atau dipuji secara privat lewat chat berdua aja?",
+            "Ada gak hal yang menurut kamu sepele tapi kalau aku lakuin bisa bikin kamu ngerasa berharga banget?"
+        ],
+        playful: [
+            "Kamu lebih suka aku yang banyak omong dan cerewet atau aku yang lebih kalem tapi sekali ngomong bikin adem?", 
+            "Kalau tiba-tiba aku diem dan nggak banyak bercanda kayak biasanya, kamu bakal ngerasa aneh nggak?", 
+            "Jujur ya, panggilan sayang dari aku itu bikin kamu baper atau malah kerasa geli di kuping?", 
+            "Kamu lebih suka aku yang sering jahilin kamu sampai kesel, atau aku yang mode serius terus?", 
+            "Di mata kamu, aku ini sebenernya orang yang receh dan lucu atau malah garing banget?", 
+            "Pas aku lagi godain kamu, kamu sebenernya ngerasa seneng atau cuma pura-pura ketawa aja?", 
+            "Kamu tipe yang bakal gengsi banget kalau digodain atau malah makin jadi buat ngebales godaan aku?", 
+            "Kamu lebih suka aku yang pinter flirting dikit-dikit atau mending aku lempeng-lempeng aja?", 
+            "Pernah nggak sih kamu ngerasa 'Ih, ini orang kenapa jadi perhatian banget, mencurigakan'?", 
+            "Kalau aku agak cuek dikit, kamu bakal nyariin atau malah ngerasa lebih bebas?",
+            "Kalau kita tanding game atau main sesuatu, kamu bakal sengaja ngalah demi aku atau tetep bantai demi menang?",
+            "Apa meme atau video random terakhir yang pas kamu lihat langsung bikin kamu mikir 'ini gue sama dia banget'?",
+            "Kalau wajah aku tiba-tiba dicoret-coret pas lagi tidur, kamu bakal ketawa puas atau buru-buru ngapus?",
+            "Sebutkan satu hal paling absurd atau memalukan yang pengen kamu lakuin bareng aku minimal sekali seumur hidup!",
+            "Kalau kita kejebak di pulau terpencil berdua, siapa di antara kita yang bakal nangis duluan dan siapa yang nyari makan?",
+            "Gimana muka jelek andalan kamu kalau lagi pengen bikin aku kesel atau ilfeel?",
+            "Kalau kamu bisa tukar nasib dan jadi diri aku selama 24 jam, hal usil apa yang bakal kamu lakuin ke aku?",
+            "Lebih seru mana: jalan-jalan ke mall mewah atau random nge-date keliling kota naik motor malem-malem?",
+            "Ada gak sih ketawa khas atau kebiasaan konyol aku yang diam-diam selalu kamu tiru pas lagi sendirian?",
+            "Kalau aku nantang kamu buat gak chat aku selama 12 jam, kamu bakal kuat atau langsung kalah di jam pertama?",
+            "Apa hukuman paling kocak yang mau kamu kasih ke aku kalau aku lupa hari jadian atau janji kita?",
+            "Kalau tiba-tiba aku nge-gombal maut ala anak STM, kamu bakal melting atau malah pengen nutup muka pake bantal?",
+            "Siapa di antara kita yang kalau lagi ngambek mukanya paling mirip sama squishy diperas?",
+            "Kalau kita dapet hadiah liburan gratis tapi harus pake baju kembaran warna neon ngejreng, kamu mau gak?",
+            "Apa julukan rahasia atau nama kontak aneh yang sebenernya pengen kamu sematkan buat aku di HP kamu?"
+        ],
+        reality: [
+            "Sejujurnya, kamu ngerasa komunikasi kita akhir-akhir ini lebih banyak aku yang mulai atau kita udah gantian?", 
+            "Ada nggak bagian dari cara kita ngobrol sekarang yang menurut kamu harus kita perbaiki bareng-bareng?", 
+            "Kamu ngerasa aku orangnya terlalu 'tersedia' terus buat kamu, atau porsinya udah pas buat kamu kangenin?", 
+            "Menurut kamu, kita berdua ini udah beneran seimbang dalam hal kasih usaha buat hubungan ini?", 
+            "Kalau sehari aja aku nggak chat duluan, kira-kira kamu bakal nungguin atau kamu yang bakal nyariin aku duluan?", 
+            "Kamu ngerasa kita udah beneran saling kenal luar dalem, atau masih banyak yang kita tutup-tutupin?", 
+            "Lebih suka hubungan yang progresnya cepet banget kayak gini, atau kamu pengen kita lebih santai lagi?", 
+            "Pernah nggak kamu mikir kalau hubungan kita ini sebenernya cuma karena kita lagi sama-sama butuh temen aja?", 
+            "Di titik mana yang bikin kamu yakin kalau kita ini punya tujuan yang sama buat kedepannya?", 
+            "Kalau kita jalan terus sampai jauh, apa satu hal yang paling kamu takutin bakal berubah dari kita berdua?",
+            "Jujur, apa kekurangan fisik atau sifat aku yang paling pertama kali kamu sadari tapi kamu maklumi?",
+            "Pernah gak kamu ngerasa jenuh atau bosen setengah mati sama topik obrolan kita yang itu-itu aja?",
+            "Seberapa sering kamu ngebandingin hubungan kita sekarang sama hubungan manis orang lain yang lewat di fyp?",
+            "Kalau tiba-tiba kondisi finansial atau karir salah satu dari kita nge-drop parah, kita bakal bertahan gak?",
+            "Apa hal dari masa lalu aku yang sebenernya masih ngeganjel di hati kamu tapi kamu takut buat nanya?",
+            "Kamu ngerasa kita berdua ini tipe yang kalau ada masalah langsung nyelesaiin atau hobi numpuk sampe meledak?",
+            "Di situasi kayak gimana kamu ngerasa egonya aku egois banget dan susah buat dibilangin?",
+            "Kalau nanti kesibukan kita makin gila-gilaan dan jarang ngobrol, apa strategi kamu biar gak asing?",
+            "Pernah gak terlintas di pikiran kamu buat nyerah aja sama hubungan ini pas kita lagi slek?",
+            "Apa satu kebiasaan buruk aku yang paling sering kamu toleransi padahal sebenernya kamu risih?",
+            "Menurut kamu, hubungan kita ini dibangun atas rasa cinta yang dewasa atau baru sebatas obsesi/rasa suka?",
+            "Seberapa siap kamu kalau seandainya kenyataan di masa depan gak sesuai sama ekspektasi yang kita bangun sekarang?",
+            "Ada gak janji manis aku yang menurut kamu kedengeran omong kosong dan gak realistis buat dicapai?",
+            "Apa ketakutan terbesar kamu terkait restu atau restu sosial yang mungkin bakal ngehambat kita?",
+            "Kalau kita sadar kita gak cocok di tengah jalan, kamu mending bertahan demi waktu yang terbuang atau lepasin?"
+        ],
+        funny: [
+            "Kalau kamu jadi superhero, kamu mau punya kekuatan super apa dan apa nama samaran kocak kamu?",
+            "Misalkan besok pagi kamu bangun dan tiba-tiba berubah jadi lawan jenis, hal pertama apa yang bakal kamu cek?",
+            "Kalau seluruh isi bumi ini berubah jadi zombie, kamu bakal gunain senjata apa dan aku bakal kamu jadiin umpan gak?",
+            "Apa gaya atau tren pakaian zaman dulu yang kalau kamu inget-inget lagi bikin pengen hapus ingatan?",
+            "Kalau kamu disuruh milih: gak mandi seminggu atau gak main HP seminggu, kamu milih yang mana?",
+            "Hewan apa yang menurut kamu mukanya mirip banget sama muka aku kalau lagi nahan bersin?",
+            "Kalau kamu dapet uang 1 miliar tapi syaratnya harus makan seblak campur es krim cokelat, kamu sanggup gak?",
+            "Apa kebohongan paling absurd yang pernah kamu ucapin ke guru atau dosen pas telat masuk kelas?",
+            "Kalau kamu dikasih denda 5 juta tiap kali kamu ngomong kasar atau latah, kira-kira kamu bakal miskin dalam berapa hari?",
+            "Sebutkan satu nama makanan yang menurut kamu pelafalannya paling aneh dan bikin lidah kesrimpet!",
+            "Kalau kamu terpilih jadi presiden sekte random, sekte apa yang mau kamu bikin dan apa aturan wajibnya?",
+            "Gimana bunyi kentut kamu kalau lagi di tempat sepi vs kalau lagi gengsi di depan gebetan? Praktekin dong!",
+            "Kalau alien beneran dateng ke bumi terus nyulik kamu, kira-kira mereka bakal balikin kamu karena kamu kebanyakan tingkah gak?",
+            "Apa pengalaman jatuh atau kepeleset paling estetik yang pernah kamu alami di tempat umum?",
+            "Kalau nama kamu diganti jadi nama barang elektronik rumah tangga, kamu mau dinamain apa?",
+            "Sebutkan satu lagu anak-anak yang kalau liriknya diganti pake nama aku langsung jadi kedengeran aneh!",
+            "Kalau hantu di Indonesia ngajak kamu colab bikin konten TikTok, kamu mau milih hantu jenis apa?",
+            "Apa taktik andalan kamu pas ketahuan ngantuk atau ketiduran di tengah-tengah acara formal?",
+            "Kalau kamu bisa punya peliharaan hewan mitologi atau monster purba, kamu mau pelihara apa di rumah?",
+            "Gimana cara kamu nge-ghosting tukang parkir yang tiba-tiba muncul pas kamu gak punya uang receh?",
+            "Kalau kamu disuruh bikin tato gambar muka aku tapi versi karikatur abstrak di jidat, kamu mau dibayar berapa?"
+        ]
     };
-
-    const s1 = "Kalo keinget hal gak enak di masa lalu, biasanya kamu ngapain biar tenang?";
-    const s2 = "Ada gak sih? kejadian gak enak di masa lalu yang masih kadang kamu kepikiran sampe sekarang?";
 
     let activeQueue = [];
 
@@ -228,22 +458,22 @@
             title = "🎲 Random Mix";
         } else {
             pool = [...questions[cat]];
-            const names = {daily:"🌤️ Daily", feeling:"🫶 Feeling", pov:"🧠 POV", ldr:"📱 LDR", family:"👨‍👩‍👧 Keluarga", social:"🧑‍🤝‍🧑 Social", care:"💛 Care", playful:"😏 Playful", reality:"🧠 Reality"};
+            const names = {
+                daily: "🌤️ Daily", 
+                feeling: "🫶 Feeling", 
+                pov: "🧠 POV", 
+                family: "👨‍👩‍👧 Keluarga", 
+                social: "🧑‍🤝‍🧑 Social", 
+                care: "💛 Care", 
+                playful: "😏 Playful", 
+                reality: "🧠 Reality",
+                funny: "🤪 Funny"
+            };
             title = names[cat];
         }
 
+        // Pengacakan murni tanpa batasan s1 & s2
         pool.sort(() => Math.random() - 0.5);
-
-        // Hapus duplikat pertanyaan spesial jika ada
-        pool = pool.filter(q => q !== s1 && q !== s2);
-
-        // Sisipkan s1 di urutan 3 atau 4 (index 2 atau 3)
-        const idx1 = Math.random() < 0.5 ? 2 : 3;
-        pool.splice(idx1, 0, s1);
-
-        // Sisipkan s2 di urutan 5 atau 6 (index 4 atau 5)
-        const idx2 = Math.random() < 0.5 ? 4 : 5;
-        pool.splice(idx2, 0, s2);
 
         activeQueue = pool;
         document.getElementById('home-screen').style.display = 'none';
